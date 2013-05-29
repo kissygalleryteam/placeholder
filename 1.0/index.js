@@ -58,8 +58,8 @@ KISSY.add(function (S) {
         region : {
             top:0,
             left:0,
-            width:0,
-            height:0
+            width:120,
+            height:20
         }
     };
     S.extend(Placeholder , S.Base , {
