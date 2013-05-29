@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>demo标题</title>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js" charset="utf-8"></script>
+    <style type="text/css">
+        body{
+            font-size:12px;
+            line-height: 1.5;
+        }
+        input{
+            padding:5px;
+            height:18px;
+        }
+    </style>
+</head>
+<body>
+<h2>demo标题</h2>
+<p>测试: <input type="text" id="J_Test" placeholder="请输入用户名" size="30"/> <button type="buttom" id="J_Btn">赋值</button></p>
+<script>
+    var S = KISSY;
+    S.Config.debug = true;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('gallery/placeholder/1.0/index', function (S, Placeholder) {
+         var placeholder = new Placeholder({
+             node : '#J_Test'
+         });
+
+        //内部修改了input的value,仅限于用val方法
+        var i = 0;
+        S.one('#J_Btn').on('click' , function (){
+            S.one('#J_Test').val(i%2 == 0 ? '修改了INPUT的值,Placeholder自动隐藏': '');
+            S.one(this).html(i%2 == 0 ? '清空': '赋值');
+            i++;
+        });
+    })
+</script>
+</body>
+</html>
