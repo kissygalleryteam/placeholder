@@ -1,10 +1,10 @@
 {
     "name": "placeholder",
     "version": "1.0",
-    "desc": "请修改组件描述",
+    "desc": "基于kissy的Placeholder",
     "cover": "",
     "author": {
-        "name": "shuke",
+        "name": "舒克",
         "email": "shuke.cl@taobao.com",
         "page": "请修改作者个人首页"
     },
