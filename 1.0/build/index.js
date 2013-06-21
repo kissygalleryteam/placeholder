@@ -56,7 +56,7 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
             value : null
         },
         labelTmpl : {
-            value : '<label class="placeholder-text" style="display: none;color:#9a9a9a;line-height:1.5;position:absolute;left:0;top:0;">&nbsp;</label>'
+            value : '<label class="placeholder-text" style="display: none;color:#9a9a9a;position:absolute;left:0;top:0;">&nbsp;</label>'
         },
         wapperTmpl : {
             value : '<span class="placeholder-wrap" style="position: relative;display:inline-block;zoom:1;"></span>'
@@ -64,8 +64,8 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
         region : {
             top:0,
             left:0,
-            width:0,
-            height:0
+            width:120,
+            height:20
         }
     };
     S.extend(Placeholder , S.Base , {
