@@ -50,7 +50,7 @@ KISSY.add(function (S) {
             value : null
         },
         labelTmpl : {
-            value : '<label class="placeholder-text" style="display: none;color:#9a9a9a;line-height:1.5;position:absolute;left:0;top:0;">&nbsp;</label>'
+            value : '<label class="placeholder-text" style="display: none;color:#9a9a9a;position:absolute;left:0;top:0;">&nbsp;</label>'
         },
         wapperTmpl : {
             value : '<span class="placeholder-wrap" style="position: relative;display:inline-block;zoom:1;"></span>'
