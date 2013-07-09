@@ -106,8 +106,8 @@ KISSY.add(function (S) {
             wapper_node.append(label_node);
             if (!isSetWapperNode) {
                 DOM.insertBefore(wapper_node , input_node);
+                wapper_node.append(input_node);
             }
-            wapper_node.append(input_node);
             this.labelNode = label_node;
             this.wapperNode = wapper_node;
         },
