@@ -61,6 +61,22 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
         wapperTmpl : {
             value : '<span class="placeholder-wrap" style="position: relative;display:inline-block;zoom:1;"></span>'
         },
+        /**
+         * 设置placeholder所在的父亲节点，如果设置了该值，则不再用wapperTmpl去创建父级节点
+         * @attribute wapperNode
+         * @type NodeList
+         * @default null
+         **/
+        wapperNode : {
+            value : null,
+            setter : function (val){
+                if (val instanceof S.NodeList) {
+                    return val;
+                }else{
+                    return S.one(val);
+                }
+            }
+        },
         region : {
             top:0,
             left:0,
@@ -82,7 +98,8 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
             this.check();
         },
         renderUI : function (){
-            var wapper_node = S.one(DOM.create(this.get('wapperTmpl')));
+            var isSetWapperNode = !!this.get('wapperNode');
+            var wapper_node = isSetWapperNode ? this.get('wapperNode') : S.one(DOM.create(this.get('wapperTmpl')));
             var input_node = this.node;
             var label_node = S.one(DOM.create(this.get('labelTmpl')));
             var input_id = input_node.attr('id');
@@ -93,7 +110,9 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
             }
             label_node.attr('for',input_id);
             wapper_node.append(label_node);
-            DOM.insertBefore(wapper_node , input_node);
+            if (!isSetWapperNode) {
+                DOM.insertBefore(wapper_node , input_node);
+            }
             wapper_node.append(input_node);
             this.labelNode = label_node;
             this.wapperNode = wapper_node;

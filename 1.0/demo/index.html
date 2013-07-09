@@ -18,9 +18,9 @@
 <body>
 <h2>demo标题</h2>
 <p>测试: <input type="text" id="J_Test" placeholder="请输入用户名" size="30"/> <button type="buttom" id="J_Btn">赋值</button></p>
+<p>测试wapperNode: <span style="position:relative" id="J_TestParent2"><input type="text" id="J_Test2" placeholder="请输入用户名" size="30"/></span></p>
 <script>
     var S = KISSY;
-    S.Config.debug = true;
     if (S.Config.debug) {
         var srcPath = "../../../";
         S.config({
@@ -39,6 +39,11 @@
          var placeholder = new Placeholder({
              node : '#J_Test'
          });
+
+        var placeholder = new Placeholder({
+            node : '#J_Test2',
+            wapperNode : '#J_TestParent2'
+        });
 
         //内部修改了input的value,仅限于用val方法
         var i = 0;
