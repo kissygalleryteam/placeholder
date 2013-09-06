@@ -98,7 +98,7 @@ KISSY.add(function (S) {
             var label_node = S.one(DOM.create(this.get('labelTmpl')));
             var input_id = input_node.attr('id');
             //没有id的输入框创建随机id
-            if (input_id == '') {
+            if (!input_id) {
                 input_id = S.guid('J_K'+ new Date().getTime());
                 input_node.attr('id', input_id);
             }
