@@ -53,7 +53,7 @@ KISSY.add(function (S) {
             value : '<label class="placeholder-text" style="display: none;color:#9a9a9a;position:absolute;left:0;top:0;">&nbsp;</label>'
         },
         wapperTmpl : {
-            value : '<span class="placeholder-wrap" style="position: relative;"></span>'
+            value : '<span class="placeholder-wrap" style="position:relative;display:inline-block;zoom:1;"></span>'
         },
         /**
          * 设置placeholder所在的父亲节点，如果设置了该值，则不再用wapperTmpl去创建父级节点
@@ -98,7 +98,7 @@ KISSY.add(function (S) {
             var label_node = S.one(DOM.create(this.get('labelTmpl')));
             var input_id = input_node.attr('id');
             //没有id的输入框创建随机id
-            if (input_id == '') {
+            if (!input_id) {
                 input_id = S.guid('J_K'+ new Date().getTime());
                 input_node.attr('id', input_id);
             }
