@@ -49,7 +49,7 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
     }
     function Placeholder(){
         Placeholder.superclass.constructor.apply(this,arguments);
-        this.initializer();
+        this._init();
     }
     Placeholder.ATTRS = {
         node : {
@@ -85,7 +85,7 @@ KISSY.add('gallery/placeholder/1.0/index',function (S) {
         }
     };
     S.extend(Placeholder , S.Base , {
-        initializer : function (){
+        _init : function (){
             this.node = this.get('node');
             if (!(this.node instanceof NodeList)) {
                 this.node = S.one(this.node);
